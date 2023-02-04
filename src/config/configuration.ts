@@ -4,8 +4,7 @@ export default () => ({
 
     // JWT options
     secret: process.env.JWT_SECRET,
-    expireJwt: 3600,
-    expiresRefresh: 604800,
+    expireJwt: '100y',
 
     //Connect to db
     db_name: process.env.DB_NAME,

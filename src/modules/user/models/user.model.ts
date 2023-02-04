@@ -1,4 +1,6 @@
-import { Column, Default, Model, Table } from 'sequelize-typescript';
+import { Column, Default, HasMany, Model, Table } from 'sequelize-typescript';
+import { Category } from '../../category/models/category.model';
+import { Expenses } from '../../expenses/models/expenses.model';
 
 @Table
 export class User extends Model {
@@ -26,4 +28,14 @@ export class User extends Model {
 
     @Column
     avatar: string;
+
+    @Default('user')
+    @Column
+    role: string;
+
+    @HasMany(() => Expenses)
+    expenses: Expenses;
+
+    @HasMany(() => Category)
+    category: Category;
 }
