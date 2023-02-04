@@ -49,4 +49,8 @@ export class CategoryService {
         };
         return this.categoryRepository.create(categoryData);
     }
+
+    async findCategoryRecord(id: Category) {
+        return this.categoryRepository.findOne({ where: { id } });
+    }
 }
