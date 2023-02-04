@@ -1,6 +1,13 @@
 import { IsString } from 'class-validator';
 
 export class CreateUserResponse {
+    user: User;
+
+    @IsString()
+    token: string;
+}
+
+class User {
     @IsString()
     firstName: string;
 
