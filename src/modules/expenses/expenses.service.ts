@@ -25,13 +25,6 @@ export class ExpensesService {
         return this.expensesRepository.create(record);
     }
 
-    async getCategory(category) {
-        return new Promise((resolve, reject) => {
-            const result = this.categoryService.findCategoryRecord(category);
-            resolve(result);
-        });
-    }
-
     async getExpensesRecord(user: User) {
         return this.expensesRepository.findAll({
             where: { user: user.id },
